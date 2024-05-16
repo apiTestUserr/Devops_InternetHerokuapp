@@ -28,6 +28,9 @@ public class BilelDropDownTestSuite {
 
 		By dropdownPageLocator = By.xpath("//a[normalize-space()='Dropdown']");
 
+		
+		
+		
 		WebElement dropDownPageElement = driver.findElement(dropdownPageLocator);
 
 		dropDownPageElement.click();
@@ -48,6 +51,11 @@ public class BilelDropDownTestSuite {
 		sel.selectByVisibleText("Option 1");
 				
 		
+		
+		
+		
+		
+		
 		// Nous allons comparer si l'option 1 est bien selectionnée
 
 		WebElement firstSelectedOptionElement = sel.getFirstSelectedOption();
@@ -55,7 +63,12 @@ public class BilelDropDownTestSuite {
 		
 		Assert.assertTrue(!firstSelectedOptionElement.isSelected());
 
-//		String actualOptionText = firstSelectedOptionElement.getText();
+
+		
+		
+		
+		
+		//		String actualOptionText = firstSelectedOptionElement.getText();
 //
 //		String expectedOptionText = "Option 1";
 //
