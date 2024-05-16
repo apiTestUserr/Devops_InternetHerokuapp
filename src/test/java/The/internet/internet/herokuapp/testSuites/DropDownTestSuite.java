@@ -12,14 +12,14 @@ import org.openqa.selenium.support.ui.Select;
 
 public class DropDownTestSuite {
 
-	String url = "https://the-internet.herokuapp.com/";
+	String homeUrl = "https://the-internet.herokuapp.com/";
 
 	WebDriver driver = new ChromeDriver();
 
 	@Before
 	public void init() {
 
-		driver.get(url);
+		driver.get(homeUrl);
 	}
 
 	@Test
