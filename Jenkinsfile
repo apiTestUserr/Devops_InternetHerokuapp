@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Récupérer le code source du dépôt GitHub
-                git 'https://github.com/apiTestUserr/NewHerokappTestAutomation.git'
+                git 'https://github.com/apiTestUserr/Devops_InternetHerokuapp.git'
             }
         }
 
