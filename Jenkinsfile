@@ -26,8 +26,8 @@ pipeline {
     post {
        always {
             echo 'Archiving artifacts and test results...'
-            archiveArtifacts artifacts: 'target/surefire-reports/*.html', allowEmptyArchive: true
-            junit 'target/surefire-reports/*.html'
+            archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
+            junit 'target/surefire-reports/*.xml'
         }
     }
 }
