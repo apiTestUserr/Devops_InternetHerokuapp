@@ -17,6 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Exécuter les tests avec Maven
+                echo 'Running tests...'
                 sh 'mvn test'
             }
         }
