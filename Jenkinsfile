@@ -24,10 +24,9 @@ pipeline {
     }
 
     post {
-        always {
-            // Archiver les rapports de tests pour les rendre accessibles dans Jenkins
-            archiveArtifacts artifacts: '**/target/*.xml', allowEmptyArchive: true
-            // Analyser les résultats des tests et les afficher dans Jenkins
+       always {
+            echo 'Archiving artifacts and test results...'
+            archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
             junit 'target/surefire-reports/*.xml'
         }
     }
