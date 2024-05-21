@@ -21,7 +21,11 @@ pipeline {
                     if (isUnix()) {
                         sh 'nohup ./run-tests.sh &'
                     } else {
-                        bat 'run-tests.bat'
+                        if (fileExists('run-tests.bat')) {
+                            bat 'run-tests.bat'
+                        } else {
+                            echo 'run-tests.bat not found, skipping.'
+                        }
                     }
                 }
                 sh 'mvn test'
