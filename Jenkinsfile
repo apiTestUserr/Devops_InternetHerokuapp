@@ -16,21 +16,15 @@ pipeline {
 
         stage('Test') {
             steps {
+                // Exécuter les tests avec Maven
                 echo 'Running tests...'
-                script {
-                    if (isUnix()) {
-                        sh 'nohup ./run-tests.sh &'
-                    } else {
-                        bat 'start /B run-tests.bat'
-                    }
-                }
                 sh 'mvn test'
             }
         }
     }
 
     post {
-        always {
+       always {
             echo 'Archiving artifacts and test results...'
             archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
             junit 'target/surefire-reports/*.xml'
