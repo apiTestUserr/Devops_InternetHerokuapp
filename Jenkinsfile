@@ -15,26 +15,25 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                echo 'Running tests...'
-                script {
-                    if (isUnix()) {
-                        sh 'nohup ./run-tests.sh &'
-                    } else {
-                        if (fileExists('run-tests.bat')) {
-                            bat 'run-tests.bat'
-                        } else {
-                            echo 'run-tests.bat not found, skipping.'
-                        }
-                    }
-                }
+    steps {
+        echo 'Running tests...'
+        script {
+            if (isUnix()) {
+                sh 'nohup ./run-tests.sh &'
+            } else {
+                bat 'start /B run-tests.bat'
+            }
+        }
+    }
+}
+
                 sh 'mvn test'
             }
         }
     }
 
     post {
-        always {
+       always {
             echo 'Archiving artifacts and test results...'
             archiveArtifacts artifacts: 'target/surefire-reports/*.xml', allowEmptyArchive: true
             junit 'target/surefire-reports/*.xml'
