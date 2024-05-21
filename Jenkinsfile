@@ -10,8 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Utilisez une commande appropriée pour exécuter vos tests sous Windows
-                bat 'run-tests.bat'  // Si vous avez un script batch pour exécuter les tests
+                bat 'run-tests.bat'  // Assurez-vous que le chemin est correct
             }
         }
         stage('Archive') {
