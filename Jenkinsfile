@@ -21,7 +21,7 @@ pipeline {
                     if (isUnix()) {
                         sh 'nohup ./run-tests.sh &'
                     } else {
-                        bat 'start /B run-tests.bat'
+                        bat 'run-tests.bat'
                     }
                 }
                 sh 'mvn test'
