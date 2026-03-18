@@ -15,11 +15,7 @@ public class UserAuthenticationTest {
 	
 	WebDriver driver = new ChromeDriver();  //  Polymorphisme
 
-	
-	/*
-	 *  On rajoute l'annotation @Before pour que la methode init() puisse s'executer avant 
-	 *  chaque methode marquée par  @Test
-	 */
+
 	
  	@Before
 	public void init() {
